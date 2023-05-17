@@ -1,1 +1,21 @@
-
+CREATE Table Nuevo_Usuario (
+Id int primary key Identity (1,1),
+	 Nombre VARCHAR(50),
+    Usuario VARCHAR(50) unique,
+    clave VARBINARY(8000),
+	correo nvarchar(30)unique,
+	telefono VARCHAR(50) unique
+)
+GO
+//mostrar en datagrid la tabla
+select usr.Id 'ID_usuario',Leng.Id 'Id_Lenguaje', Reg.fecha_hora'DateTime',Reg.Name_archivo'Archivo'
+	from Registro Reg
+	inner join  Nuevo_Usuario usr
+	on Reg.Id=usr.Id
+	inner join Lenguajes Leng
+	on Reg.Id_Lenguaje=Leng.Id
+CREATE Table Lenguajes (
+Id int primary key Identity (1,1),
+	 Nombre VARCHAR(50)
+)
+GO
