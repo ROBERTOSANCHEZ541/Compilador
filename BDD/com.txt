@@ -19,3 +19,11 @@ Id int primary key Identity (1,1),
 	 Nombre VARCHAR(50)
 )
 GO
+
+CREATE Table RegistroA (
+Id int,
+Id_Lenguaje int,
+fecha_hora Datetime not null,
+Name_archivo VARCHAR(50),
+CONSTRAINT fk_Id FOREIGN KEY (Id) REFERENCES Nuevo_Usuario (Id),
+CONSTRAINT fk_Id_Lenguaje FOREIGN KEY (Id_Lenguaje) REFERENCES Lenguajes(Id));
